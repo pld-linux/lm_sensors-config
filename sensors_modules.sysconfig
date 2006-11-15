@@ -1,0 +1,23 @@
+# configuration for harware sensors monitoring
+
+# configure sensors (i.e. call `sensors -s')
+# Allows to change min and max alarm limits from sensors.conf
+#SENSORS_SET=1
+
+# BUS - stands for i2c bus, one of: ali1535, ali15x3, amd756, hydra, i801,
+# 	i810, isa, piix4, savage4, sis5595, via, viapro, voodoo3
+
+BUS=
+
+# CHIP - stands for sensors chip, one of: adm1021, adm1024, adm1025,
+# 	adm9240, bt869, ddcmon, ds1621, eeprom fscpos, fscscy, gl518sm,
+# 	gl520sm, icspll, it87, lm75, lm78, lm80 lm87, ltc1710, matorb,
+# 	maxilife, mtp008, pcf8574, sis5595, thmc50 via686a, vt1211, w83781d
+
+CHIP=
+
+# You may use sensors-detect commant to check what bus and chips are available
+
+# example for VIAKT* mainboards (bus is not (!) via)
+# BUS=isa
+# CHIP=via686a

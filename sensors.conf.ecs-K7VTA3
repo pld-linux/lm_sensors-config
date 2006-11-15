@@ -1,0 +1,58 @@
+# $Revision$, $Date$
+BUS="viapro isa"
+CHIP="eeprom it87"
+#
+# This config file was prepared for ECS K7VTA3 series motherboards
+# and was tested with ECS K7VTA3 v. 5.0 motherboard.
+#
+
+chip "it87-*"
+
+# Voltage
+	label in0 "CPU Vcore"
+	label in1 "+2.5V"
+	label in2 "+3.3V"
+	label in3 "+5V"
+	label in4 "+12V"
+	label in8 "VBat"
+
+	set in0_min 1.7 * 0.95
+	set in0_max 1.7 * 1.05
+	set in1_min 2.4
+	set in1_max 2.6
+	set in2_min 3.3 * 0.95
+	set in2_max 3.3 * 1.05
+	set in3_min 5.0 * 0.95
+	set in3_max 5.0 * 1.05
+	set in4_min 12 * 0.90
+	set in4_max 12 * 1.10
+	set in7_min 5 * 0.95
+	set in7_max 5 * 1.05
+
+	compute in3 ((6.8/10)+1)*@ ,  @/((6.8/10)+1)
+	compute in4 ((30/10) +1)*@  , @/((30/10) +1)
+
+	# following sensors don't provide usable information
+	ignore in5
+	ignore in6
+	ignore in7
+	ignore temp3
+	ignore vid 
+
+# Temperature
+	label temp1 "System"
+	set temp1_over  60
+	set temp1_low  20
+
+	label temp2 "CPU"
+	set temp2_over 75
+	set temp2_low 20
+
+# Fans
+	label fan1 "CPU Fan"
+	label fan2 "CAS Fan"
+	
+	set fan1_min 2000
+	set fan2_min 2000
+
+	ignore fan3

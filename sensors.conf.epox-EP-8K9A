@@ -1,0 +1,47 @@
+# $Revision$, $Date$
+BUS="viapro isa"
+CHIP="eeprom w83627hf"
+#
+# This config file was prepared for Epox 8K9A series motherboards
+# and was tested with EP-8K9AI motherboard.
+#
+
+chip "w83697hf-*"
+
+    label in0 "VCore"
+    label in2 "VAgp"
+    label in3 "+5V"
+    label in4 "+12V"
+    label in5 "+3.3V" # aka. Vio
+    label in6 "Vdimm"
+    label in7 "VBat"
+    label in8 "V5SB"
+
+    compute in3 ((6.8/10)+1)*@ ,  @/((6.8/10)+1)
+    compute in4 ((28/10)+1)*@  ,  @/((28/10)+1)
+    compute in8 ((6.8/10)+1)*@ ,  @/((6.8/10)+1)
+
+    set in0_min 1.8 * 0.95
+    set in0_max 1.8 * 1.05
+    set in2_min 1.5 * 0.95
+    set in2_max 1.5 * 1.05
+    set in3_min 5.0 * 0.95
+    set in3_max 5.0 * 1.05
+    set in4_min 12 * 0.90
+    set in4_max 12 * 1.10
+    set in5_min 3.3 * 0.95
+    set in5_max 3.3 * 1.05
+    set in6_min 2.6 * 0.95
+    set in6_max 2.6 * 1.05
+    set in7_min 3.0 * 0.90
+    set in7_max 3.0 * 1.10
+    set in8_min 5 * 0.90
+    set in8_max 5 * 1.10
+
+    set temp1_over 50
+    set temp1_hyst 45
+    set temp2_over 100
+    set temp2_hyst 90
+
+# uncomment this line if you don't have 2nd fan
+#    ignore fan2
