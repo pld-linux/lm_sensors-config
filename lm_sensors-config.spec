@@ -1,7 +1,7 @@
-%define		cmodule		%{_sysconfdir}/sysconfig/sensors_modules
-%define		cdaemon		%{_sysconfdir}/sysconfig/sensors
-%define		smodule		%{_sysconfdir}/rc.d/init.d/sensors_modules
-%define		sdaemon		%{_sysconfdir}/rc.d/init.d/sensors
+%define		cmodule		/etc/sysconfig/sensors_modules
+%define		cdaemon		/etc/sysconfig/sensors
+%define		smodule		/etc/rc.d/init.d/sensors_modules
+%define		sdaemon		/etc/rc.d/init.d/sensors
 
 Summary:	lm_sensors configuration files
 Summary(pl):	Pliki konfiguracyjne lm_sensors
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Configuration files for lm_sensors.
 
 %description -l pl
-Pliki konfiguracyjne lm_sensors
+Pliki konfiguracyjne lm_sensors.
 
 %package epox-EP-8K9A
 Summary:	lm_sensors configuration files
@@ -34,6 +34,10 @@ Provides:	%{name}
 lm_sensors configuration files for Epox 8K9A series motherboards
 (tested with EP-8K9AI motherboard).
 
+%description epox-EP-8K9A -l pl
+Pliki konfiguracyjne lm_sensors dla p造t g堯wnych z serii Epox 8K9A
+(testowane na p造cie EP-8K9AI).
+
 %package ecs-K7VTA3
 Summary:	lm_sensors configuration files
 Summary(pl):	Pliki konfiguracyjne lm_sensors
@@ -45,8 +49,12 @@ Requires:	lm_sensors
 lm_sensors configuration files for ECS K7VTA3 series motherboards
 (tested with K7VTA3 v. 5.0).
 
+%description ecs-K7VTA3 -l pl
+Pliki konfiguracyjne lm_sensors dla p造t g堯wnych z serii ECS K7VTA3
+(testowane na p造cie K7VTA3 v. 5.0).
+
 %prep
-%setup -T -c %{version}
+%setup -q -c -T
 mkdir src
 mkdir etc
 mkdir sysconfig
@@ -60,16 +68,16 @@ mk_filelist() {
 	cat > files.$1 << EOF
 %defattr(644,root,root,755)
 %%config(noreplace) %%verify(not md5 mtime size) %{_sysconfdir}/sensors.conf.$1
-%%config(noreplace) %%verify(not md5 mtime size) %{_sysconfdir}/sysconfig/sensors_modules.$1
+%%config(noreplace) %%verify(not md5 mtime size) /etc/sysconfig/sensors_modules.$1
 %%ghost %{_sysconfdir}/sensors.conf
-%%ghost %{_sysconfdir}/sysconfig/sensors_modules
+%%ghost /etc/sysconfig/sensors_modules
 EOF
 }
 
 mk_post() {
 	cat > post.$1 << EOF
 ln -sf %{_sysconfdir}/sensors.conf.$1 %{_sysconfdir}/sensors.conf
-ln -sf %{_sysconfdir}/sysconfig/sensors_modules.$1 %{_sysconfdir}/sysconfig/sensors_modules
+ln -sf /etc/sysconfig/sensors_modules.$1 /etc/sysconfig/sensors_modules
 if [ -f "%{smodule}" ]; then
 	/sbin/chkconfig --add sensors_modules
 	%%service sensors_modules restart "sensors modules"
@@ -115,11 +123,11 @@ done
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig
+install -d $RPM_BUILD_ROOT/etc/sysconfig
 cp etc/* $RPM_BUILD_ROOT%{_sysconfdir}
-cp sysconfig/* $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig
+cp sysconfig/* $RPM_BUILD_ROOT/etc/sysconfig
 
-ln -sf /dev/null $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/sensors_modules
+ln -sf /dev/null $RPM_BUILD_ROOT/etc/sysconfig/sensors_modules
 ln -sf /dev/null $RPM_BUILD_ROOT%{_sysconfdir}/sensors.conf
 
 %clean
