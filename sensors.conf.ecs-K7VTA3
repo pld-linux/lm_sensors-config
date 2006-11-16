@@ -26,8 +26,6 @@ chip "it87-*"
 	set in3_max 5.0 * 1.05
 	set in4_min 12 * 0.90
 	set in4_max 12 * 1.10
-	set in7_min 5 * 0.95
-	set in7_max 5 * 1.05
 
 	compute in3 ((6.8/10)+1)*@ ,  @/((6.8/10)+1)
 	compute in4 ((30/10) +1)*@  , @/((30/10) +1)
