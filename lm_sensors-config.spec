@@ -14,6 +14,7 @@ Source0:	sensors_modules.sysconfig
 # Sources from 100 are motherboard specific %{_sysconfdir}/sensors files
 Source100:	sensors.conf.epox-EP-8K9A
 Source101:	sensors.conf.ecs-K7VTA3
+Source102:	sensors.conf.ecs-KT600-A
 URL:		http://www.lm-sensors.org/wiki/Configurations
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,6 +54,19 @@ lm_sensors configuration files for ECS K7VTA3 series motherboards
 Pliki konfiguracyjne lm_sensors dla p³yt g³ównych z serii ECS K7VTA3
 (testowane na p³ycie K7VTA3 v. 5.0).
 
+%package ecs-KT600-A
+Summary:	lm_sensors configuration files
+Summary(pl):	Pliki konfiguracyjne lm_sensors
+Group:		Applications/System
+Provides:	%{name}
+Requires:	lm_sensors
+
+%description ecs-KT600-A
+lm_sensors configuration files for ECS KT600-A motherboard.
+
+%description ecs-KT600-A -l pl
+Pliki konfiguracyjne lm_sensors dla p³yty g³ównej ECS KT600-A.
+
 %prep
 %setup -q -c -T
 mkdir src
@@ -60,6 +74,7 @@ mkdir etc
 mkdir sysconfig
 cp %{SOURCE100} src
 cp %{SOURCE101} src
+cp %{SOURCE102} src
 
 %build
 rm -f etc/* sysconfig/*
@@ -140,3 +155,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	ecs-K7VTA3 -f post.ecs-K7VTA3
 %preun	ecs-K7VTA3 -f preun.ecs-K7VTA3
 %files	ecs-K7VTA3 -f files.ecs-K7VTA3
+
+%post	ecs-KT600-A -f post.ecs-KT600-A
+%preun	ecs-KT600-A -f preun.ecs-KT600-A
+%files	ecs-KT600-A -f files.ecs-KT600-A
