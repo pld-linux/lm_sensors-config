@@ -1,0 +1,44 @@
+# $Revision$, $Date$
+BUS="viapro isa"
+CHIP="eeprom it87"
+#
+# This config file was prepared for ECS KT600-A motherboard.
+#
+
+# Voltage
+	label in0 "CPU Vcore"
+	label in1 "+2.5V"
+	label in8 "VBat"
+
+	set in0_min 1.5 * 0.95
+	set in0_max 1.5 * 1.05
+	set in1_min 2.5 * 0.95
+	set in1_max 2.5 * 1.05
+
+# Temperature
+	set sensor1 0
+	set sensor2 3
+	set sensor3 0
+
+	label temp2     "CPU"
+	set temp2_over  75
+	set temp2_low   20
+
+# Fans
+	label fan1 "CPU Fan"
+	label fan2 "CAS Fan"
+
+	set fan1_min 2000
+	set fan2_min 2000
+
+# Following sensors don't provide usable information
+	ignore in2
+	ignore in3
+	ignore in4
+	ignore in5
+	ignore in6
+	ignore in7
+	ignore vid
+	ignore fan3
+	ignore temp1
+	ignore temp3
