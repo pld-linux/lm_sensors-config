@@ -4,7 +4,7 @@
 %define		sdaemon		/etc/rc.d/init.d/sensors
 
 Summary:	lm_sensors configuration files
-Summary(pl):	Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
 Name:		lm_sensors-config
 Version:	0.0.1
 Release:	1
@@ -21,12 +21,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Configuration files for lm_sensors.
 
-%description -l pl
+%description -l pl.UTF-8
 Pliki konfiguracyjne lm_sensors.
 
 %package epox-EP-8K9A
 Summary:	lm_sensors configuration files
-Summary(pl):	Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
 Group:		Applications/System
 Requires:	lm_sensors
 Provides:	%{name}
@@ -35,13 +35,13 @@ Provides:	%{name}
 lm_sensors configuration files for Epox 8K9A series motherboards
 (tested with EP-8K9AI motherboard).
 
-%description epox-EP-8K9A -l pl
-Pliki konfiguracyjne lm_sensors dla p≥yt g≥Ûwnych z serii Epox 8K9A
-(testowane na p≥ycie EP-8K9AI).
+%description epox-EP-8K9A -l pl.UTF-8
+Pliki konfiguracyjne lm_sensors dla p≈Çyt g≈Ç√≥wnych z serii Epox 8K9A
+(testowane na p≈Çycie EP-8K9AI).
 
 %package ecs-K7VTA3
 Summary:	lm_sensors configuration files
-Summary(pl):	Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
 Group:		Applications/System
 Provides:	%{name}
 Requires:	lm_sensors
@@ -50,13 +50,13 @@ Requires:	lm_sensors
 lm_sensors configuration files for ECS K7VTA3 series motherboards
 (tested with K7VTA3 v. 5.0).
 
-%description ecs-K7VTA3 -l pl
-Pliki konfiguracyjne lm_sensors dla p≥yt g≥Ûwnych z serii ECS K7VTA3
-(testowane na p≥ycie K7VTA3 v. 5.0).
+%description ecs-K7VTA3 -l pl.UTF-8
+Pliki konfiguracyjne lm_sensors dla p≈Çyt g≈Ç√≥wnych z serii ECS K7VTA3
+(testowane na p≈Çycie K7VTA3 v. 5.0).
 
 %package ecs-KT600-A
 Summary:	lm_sensors configuration files
-Summary(pl):	Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
 Group:		Applications/System
 Provides:	%{name}
 Requires:	lm_sensors
@@ -64,8 +64,8 @@ Requires:	lm_sensors
 %description ecs-KT600-A
 lm_sensors configuration files for ECS KT600-A motherboard.
 
-%description ecs-KT600-A -l pl
-Pliki konfiguracyjne lm_sensors dla p≥yty g≥Ûwnej ECS KT600-A.
+%description ecs-KT600-A -l pl.UTF-8
+Pliki konfiguracyjne lm_sensors dla p≈Çyty g≈Ç√≥wnej ECS KT600-A.
 
 %prep
 %setup -q -c -T
