@@ -4,7 +4,7 @@
 %define		sdaemon		/etc/rc.d/init.d/sensors
 
 Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
 Name:		lm_sensors-config
 Version:	0.0.1
 Release:	1
@@ -26,7 +26,7 @@ Pliki konfiguracyjne lm_sensors.
 
 %package epox-EP-8K9A
 Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
 Group:		Applications/System
 Requires:	lm_sensors
 Provides:	%{name}
@@ -41,7 +41,7 @@ Pliki konfiguracyjne lm_sensors dla płyt głównych z serii Epox 8K9A
 
 %package ecs-K7VTA3
 Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
 Group:		Applications/System
 Provides:	%{name}
 Requires:	lm_sensors
@@ -56,7 +56,7 @@ Pliki konfiguracyjne lm_sensors dla płyt głównych z serii ECS K7VTA3
 
 %package ecs-KT600-A
 Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):   Pliki konfiguracyjne lm_sensors
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
 Group:		Applications/System
 Provides:	%{name}
 Requires:	lm_sensors
