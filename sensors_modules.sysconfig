@@ -4,20 +4,34 @@
 # Allows to change min and max alarm limits from sensors.conf
 #SENSORS_SET=1
 
-# BUS - stands for i2c bus, one of: ali1535, ali15x3, amd756, hydra, i801,
-# 	i810, isa, piix4, savage4, sis5595, via, viapro, voodoo3
+# BUS - stands for i2c bus, empty or some of: acorn, ali1535, ali1563, ali15x3,
+#	amd756, amd756-s4882, amd8111, at91, au1550, bfin-twi, davinci, elektor,
+#	gpio, hydra, i801, i810, ibm_iic, iop3xx, isa, ixp2000, ixp4xx, mpc,
+#	mv64xxx, nforce2, ocores, omap, parport, parport-light, pasemi, pca-isa,
+#	piix4, pmcmsp, pnx, powermac, prosavage, pxa, s3c2410, savage4, sibyte,
+#	simtec, sis5595, sis630, sis96x, stub, taos-evm, tiny-usb, versatile,
+#	via, viapro, voodoo3
+# note: i2c-isa is obsolete since Linux >= 2.6.23, use empty BUS instead
 
 BUS=
 
-# CHIP - stands for sensors chip, one of: adm1021, adm1024, adm1025,
-# 	adm9240, bt869, ddcmon, ds1621, eeprom fscpos, fscscy, gl518sm,
-# 	gl520sm, icspll, it87, lm75, lm78, lm80 lm87, ltc1710, matorb,
-# 	maxilife, mtp008, pcf8574, sis5595, thmc50 via686a, vt1211, w83781d
+# CHIP - stands for sensors chip, one or more of: asb100, w83627hf, w83792d,
+#	w83793, w83781d, w83791d, abituguru, abituguru3, ad7418, adm1021,
+#	adm1025, adm1026, adm1029, adm1031, adm9240, adt7470, applesmc, atxp1,
+#	coretemp, dme1737, ds1621, f71805f, f71882fg, f75375s, fscher, fschmd,
+#	fscpos, gl518sm, gl520sm, hdaps, i5k_amb, ibmpex, it87, k8temp, lm63,
+#	lm70, lm75, lm77, lm78, lm80, lm83, lm85, lm87, lm90, lm92, lm93,
+#	max1619, max6650, pc87360, pc87427, sis5595, smsc47b397, smsc47m1,
+#	smsc47m192, thmc50, via686a, vt1211, vt8231, w83627ehf, w83l785ts,
 
 CHIP=
 
-# You may use sensors-detect commant to check what bus and chips are available
+# You may use sensors-detect commant to check what busses and chips are available
 
-# example for VIAKT* mainboards (bus is not (!) via)
+# example for VIA KT* mainboards (sensors bus is ISA, not via)
+#	on Linux >= 2.6.23:
+# BUS=
+# CHIP=via686a
+#	on Linux < 2.6.23:
 # BUS=isa
 # CHIP=via686a
