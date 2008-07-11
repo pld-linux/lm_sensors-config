@@ -26,8 +26,8 @@ Configuration files for lm_sensors.
 Pliki konfiguracyjne lm_sensors.
 
 %package epox-EP-8K9A
-Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
+Summary:	lm_sensors configuration files for Epox EP-8K9A MBs
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors dla płyt głównych Epox EP-8K9A
 Group:		Applications/System
 Requires:	lm_sensors
 Provides:	%{name}
@@ -41,8 +41,8 @@ Pliki konfiguracyjne lm_sensors dla płyt głównych z serii Epox 8K9A
 (testowane na płycie EP-8K9AI).
 
 %package ecs-K7VTA3
-Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
+Summary:	lm_sensors configuration files for ECS K7VTA3 MBs
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors dla płyt głównych ECS K7VTA3
 Group:		Applications/System
 Provides:	%{name}
 Requires:	lm_sensors
@@ -56,8 +56,8 @@ Pliki konfiguracyjne lm_sensors dla płyt głównych z serii ECS K7VTA3
 (testowane na płycie K7VTA3 v. 5.0).
 
 %package ecs-KT600-A
-Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
+Summary:	lm_sensors configuration files for ECS KT600-A MBs
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors dla płyt głównych ECS KT600-A
 Group:		Applications/System
 Provides:	%{name}
 Requires:	lm_sensors
@@ -69,8 +69,8 @@ lm_sensors configuration files for ECS KT600-A motherboard.
 Pliki konfiguracyjne lm_sensors dla płyty głównej ECS KT600-A.
 
 %package foxconn-P9657AA
-Summary:	lm_sensors configuration files
-Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
+Summary:	lm_sensors configuration files for Foxconn P9657AA MBs
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors dla płyt głównych Foxconn P9657AA
 Group:		Applications/System
 Provides:	%{name}
 Requires:	lm_sensors
