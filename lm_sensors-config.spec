@@ -15,6 +15,7 @@ Source0:	sensors_modules.sysconfig
 Source100:	sensors.conf.epox-EP-8K9A
 Source101:	sensors.conf.ecs-K7VTA3
 Source102:	sensors.conf.ecs-KT600-A
+Source103:	sensors.conf.foxconn-P9657AA
 URL:		http://www.lm-sensors.org/wiki/Configurations
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -67,6 +68,20 @@ lm_sensors configuration files for ECS KT600-A motherboard.
 %description ecs-KT600-A -l pl.UTF-8
 Pliki konfiguracyjne lm_sensors dla płyty głównej ECS KT600-A.
 
+%package foxconn-P9657AA
+Summary:	lm_sensors configuration files
+Summary(pl.UTF-8):	Pliki konfiguracyjne lm_sensors
+Group:		Applications/System
+Provides:	%{name}
+Requires:	lm_sensors
+Requires:	kernel >= 2.6.24
+
+%description foxconn-P9657AA
+lm_sensors configuration files for Foxconn P9667AA motherboards.
+
+%description foxconn-P9657AA -l pl.UTF-8
+Pliki konfiguracyjne lm_sensors dla płyt głównych Foxconn P9667AA.
+
 %prep
 %setup -q -c -T
 mkdir src
@@ -75,6 +90,7 @@ mkdir sysconfig
 cp %{SOURCE100} src
 cp %{SOURCE101} src
 cp %{SOURCE102} src
+cp %{SOURCE103} src
 
 %build
 rm -f etc/* sysconfig/*
@@ -159,3 +175,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	ecs-KT600-A -f post.ecs-KT600-A
 %preun	ecs-KT600-A -f preun.ecs-KT600-A
 %files	ecs-KT600-A -f files.ecs-KT600-A
+
+%post	foxconn-P9657AA -f post.foxconn-P9657AA
+%preun	foxconn-P9657AA -f preun.foxconn-P9657AA
+%files	foxconn-P9657AA -f files.foxconn-P9657AA
