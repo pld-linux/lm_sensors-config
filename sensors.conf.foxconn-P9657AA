@@ -1,0 +1,41 @@
+# $Revision$, $Date$
+BUS=""
+CHIP="f71882fg"
+#
+# This config file was prepared for Foxconn P9657AA series motherboards
+# and was tested with Foxconn P9657AA-8EKRS2H motherboard.
+#
+
+chip "f71882fg-*"
+
+# Voltage
+	label in0	"3.3V"
+	label in1	"Vcore"
+	label in2	"VCC1.8V"
+	label in3	"VCC1.25V"
+	label in4	"+5V"
+	label in5	"+12V"
+	label in6	"+3.3V"
+	label in7	"VSB"
+	label in8	"Battery"
+
+	compute in0	(@ * 2), (@ / 2) 
+	compute in1	(@ * 1), (@ / 1) 
+	compute in2	(@ * 2), (@ / 2)
+	compute in3	(@ * 1), (@ / 1)
+	compute in4	(@ * 5.25), (@ / 5.25)
+	compute in5	(@ * 11), (@ / 11)
+	compute in6	(@ * 2), (@ / 2)
+	compute in7	(@ * 2), (@ / 2)
+	compute in8	(@ * 2), (@ / 2)
+
+# Temperature
+	label temp1	"CPU"
+	label temp2	"System"
+	ignore temp3
+
+# Fans
+	label fan1	"CPUFAN"
+	label fan2	"SYSFAN"
+	label fan3	"FAN1"
+	ignore fan4
